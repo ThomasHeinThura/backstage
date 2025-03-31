@@ -4,6 +4,10 @@ metadata:
   name: echo
   annotations:
     backstage.io/kubernetes-label-selector: "backstage.io/kubernetes-id=echo"
+    backstage.io/kubernetes-id: echo
+    backstage.io/kubernetes-namespace: backend
+    backstage.io/kubernetes-cluster: bimdevops
+
 spec:
   type: service
   lifecycle: production
