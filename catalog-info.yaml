@@ -3,7 +3,7 @@ kind: Component
 metadata:
   name: echo
   annotations:
-    backstage.io/kubernetes-id: echo
+    backstage.io/kubernetes-id: bimdevops
     backstage.io/kubernetes-namespace: backend
 spec:
   type: service
