@@ -7,5 +7,5 @@ metadata:
     backstage.io/kubernetes-namespace: backend
 spec:
   type: service
-  lifecycle: production
+  lifecycle: development
   owner: guest
