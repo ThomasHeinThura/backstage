@@ -5,8 +5,7 @@ metadata:
   annotations:
     backstage.io/kubernetes-id: echo
     backstage.io/kubernetes-namespace: backend
-
 spec:
   type: service
   lifecycle: production
-  owner: guests
+  owner: guest
