@@ -1,10 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: echo
+  name: web-test
   annotations:
-    backstage.io/kubernetes-id: bimdevops
+    backstage.io/kubernetes-id: web-server
     backstage.io/kubernetes-namespace: backend
+    backstage.io/kubernetes-label-selector: 'app=web,service=web-server'
 spec:
   type: service
   lifecycle: development
