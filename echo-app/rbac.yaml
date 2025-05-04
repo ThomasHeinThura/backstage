@@ -1,17 +1,11 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: flux-applier-role
+  name: flux-rbac-writer
   namespace: micro
 rules:
-  - apiGroups: ["apps"]
-    resources: ["deployments"]
-    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
-  - apiGroups: [""]
-    resources: ["services"]
-    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
-  - apiGroups: ["networking.k8s.io"]
-    resources: ["ingresses"]
+  - apiGroups: ["rbac.authorization.k8s.io"]
+    resources: ["rolebindings", "roles"]
     verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -25,5 +19,5 @@ subjects:
     namespace: micro
 roleRef:
   kind: Role
-  name: flux-applier-role
+  name: flux-rbac-writer
   apiGroup: rbac.authorization.k8s.io
