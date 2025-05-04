@@ -2,8 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: echo
-  annotations:
-    backstage.io/kubernetes-id: bimdevops
+  namespace: micro
 spec:
   replicas: 3
   selector:
@@ -15,7 +14,6 @@ spec:
     metadata:
       labels:
         app: echo
-        backstage.io/kubernetes-id: bimdevops
     spec:
       containers:
         - name: echo
