@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: echo
-  namespace: backend
   annotations:
     backstage.io/kubernetes-id: bimdevops
 spec:
