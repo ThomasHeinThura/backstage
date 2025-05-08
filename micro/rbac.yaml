@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: flux-rbac-writer
+  namespace: micro
+rules:
+  - apiGroups: ["rbac.authorization.k8s.io"]
+    resources: ["rolebindings", "roles"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: flux-applier-rolebinding
+  namespace: micro
+subjects:
+  - kind: ServiceAccount
+    name: flux-applier
+    namespace: micro
+roleRef:
+  kind: Role
+  name: flux-rbac-writer
+  apiGroup: rbac.authorization.k8s.io
