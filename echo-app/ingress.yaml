@@ -6,9 +6,9 @@ metadata:
   labels:
     app: echo
 spec:
-  ingressClassName: nginx
+  ingressClassName: cilium
   rules:
-    - host: echo.127.0.0.1.nip.io
+    - host: echo.192.168.48.132.nip.io
       http:
         paths:
           - path: /

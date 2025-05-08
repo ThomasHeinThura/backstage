@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: cilium
   rules:
-    - host: micro.192.168.228.2.nip.io ## micro.<localhost.com>
+    - host: micro.192.168.48.132.nip.io ## micro.<localhost.com>
       http:
         paths:
           - path: /
